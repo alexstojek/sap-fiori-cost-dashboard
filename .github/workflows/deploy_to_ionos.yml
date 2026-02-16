@@ -32,7 +32,7 @@ jobs:
         local-dir: ./dist/
         # Target folder on your IONOS webspace
         server-dir: /sap/Kostenstellenberichte/
-        protocol: ftps
+        protocol: ftp
         exclude: |
           **/.git*
           **/.git*/**
