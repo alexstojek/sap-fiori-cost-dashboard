@@ -30,4 +30,10 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y lftp
-        lftp -e "set sftp:auto-confirm yes; open sftp://$FTP_SERVER -u $FTP_USERNAME,$FTP_PASSWORD; mkdir -p /sap/Kostenstellenberichte; mirror -R -v --parallel=2 ./dist /sap/Kostenstellenberichte; bye"
+        echo "set sftp:auto-confirm yes;" > deploy.lftp
+        echo "open sftp://${FTP_SERVER}" >> deploy.lftp
+        echo "user \"${FTP_USERNAME}\" \"${FTP_PASSWORD}\"" >> deploy.lftp
+        echo "mkdir -p /sap/Kostenstellenberichte" >> deploy.lftp
+        echo "mirror -R -v --parallel=2 ./dist /sap/Kostenstellenberichte" >> deploy.lftp
+        echo "bye" >> deploy.lftp
+        lftp -f deploy.lftp
