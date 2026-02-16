@@ -1,0 +1,119 @@
+<mvc:View
+    controllerName="my.fiori.app.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    
+    <f:DynamicPage id="dynamicPageDetail" toggleHeaderOnTitleClick="false" backgroundDesign="Solid">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Kostenstellen-Bericht"/>
+                </f:heading>
+                <f:expandedContent>
+                    <Label text="Detailbericht für Kostenstelle"/>
+                    <Label text="{
+                        parts: [
+                            {path: 'kpi>/Filter/StartDate'},
+                            {path: 'kpi>/Filter/EndDate'}
+                        ],
+                        formatter: '.formatter.formatDateRange'
+                    }"/>
+                </f:expandedContent>
+            </f:DynamicPageTitle>
+        </f:title>
+        
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <layout:Grid defaultSpan="L6 M6 S12">
+                    <layout:content>
+                        <form:SimpleForm editable="false" layout="ResponsiveGridLayout" title="Berichtskopf" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1">
+                            <form:content>
+                                <Label text="Kostenstelle"/>
+                                <Text text="{report>/HeaderInfo/CostCenter}"/>
+                                <Label text="Kostenartengruppe"/>
+                                <Text text="{report>/HeaderInfo/CostElementGroup}"/>
+                                <Label text="Geschäftsjahr"/>
+                                <Text text="{report>/HeaderInfo/FiscalYear}"/>
+                            </form:content>
+                        </form:SimpleForm>
+                         <form:SimpleForm editable="false" layout="ResponsiveGridLayout" title="Selektion" labelSpanL="4" labelSpanM="4" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1">
+                            <form:content>
+                                <Label text="Selektionsdatum"/>
+                                <Text text="{report>/HeaderInfo/SelectionDate}"/>
+                                <Label text="Uhrzeit"/>
+                                <Text text="{report>/HeaderInfo/SelectionTime}"/>
+                            </form:content>
+                        </form:SimpleForm>
+                    </layout:content>
+                </layout:Grid>
+            </f:DynamicPageHeader>
+        </f:header>
+
+        <f:content>
+            <Table
+                id="reportTable"
+                items="{report>/ReportLines}"
+                sticky="ColumnHeaders"
+                inset="false"
+                alternateRowColors="true"
+                class="sapUiSmallMarginTop">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <Title text="Berichtszahlen" level="H2"/>
+                        <ToolbarSpacer/>
+                        <Button icon="sap-icon://excel-attachment" type="Transparent"/>
+                        <Button icon="sap-icon://print" type="Transparent"/>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column width="20rem">
+                        <Text text="Bezeichnung"/>
+                    </Column>
+                    <Column hAlign="End" width="8rem">
+                        <Text text="Plan"/>
+                    </Column>
+                    <Column hAlign="End" width="8rem">
+                        <Text text="Ist"/>
+                    </Column>
+                     <Column hAlign="End" width="8rem">
+                        <Text text="Obligo"/>
+                    </Column>
+                    <Column hAlign="End" width="8rem">
+                        <Text text="Abw. (abs.)"/>
+                    </Column>
+                     <Column hAlign="End" width="6rem">
+                        <Text text="Abw. (%)"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem highlight="{= ${report>Type} === 'Total' ? 'Warning' : (${report>Type} === 'Group' ? 'Information' : 'None')}">
+                        <cells>
+                            <Text text="{report>Description}" wrapping="false" class="{= ${report>Type} === 'Total' ? 'sapMTextBold' : '' }"/>
+                             <ObjectNumber
+                                number="{path: 'report>Plan', type: 'sap.ui.model.type.Float', formatOptions: {minFractionDigits: 2, maxFractionDigits: 2}}"
+                                unit="EUR"/>
+                            <ObjectNumber
+                                number="{path: 'report>Actual', type: 'sap.ui.model.type.Float', formatOptions: {minFractionDigits: 2, maxFractionDigits: 2}}"
+                                unit="EUR"/>
+                            <ObjectNumber
+                                number="{path: 'report>Commitment', type: 'sap.ui.model.type.Float', formatOptions: {minFractionDigits: 2, maxFractionDigits: 2}}"
+                                unit="EUR"/>
+                             <ObjectNumber
+                                number="{path: 'report>VarianceAbs', type: 'sap.ui.model.type.Float', formatOptions: {minFractionDigits: 2, maxFractionDigits: 2}}"
+                                unit="EUR"
+                                state="{= ${report>VarianceAbs} > 0 ? 'Warning' : 'Success'}"/>
+                             <ObjectNumber
+                                number="{path: 'report>VariancePct', type: 'sap.ui.model.type.Float', formatOptions: {minFractionDigits: 2, maxFractionDigits: 2}}"
+                                unit="%"
+                                state="{= ${report>VariancePct} > 0 ? 'Warning' : 'Success'}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>

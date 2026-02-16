@@ -1,0 +1,83 @@
+{
+    "HeaderInfo": {
+        "CostCenter": "406122 Experimentalphysik",
+        "CostElementGroup": "99DEZENTRA.KST Portalreports fuer Kostenstellen",
+        "FiscalYear": "2026",
+        "SelectionDate": "16.02.2026",
+        "SelectionTime": "20:19:45"
+    },
+    "ReportLines": [
+        {
+            "Type": "Group",
+            "Description": "6010000 Verbrauchsmaterial für Lehre und Forschung",
+            "Plan": 0.00,
+            "Actual": 863.99,
+            "Commitment": 0.00,
+            "VarianceAbs": 863.99,
+            "VariancePct": 0.00
+        },
+        {
+            "Type": "Item",
+            "Description": "* Aufwendungen Material, Energie u. Sonst.",
+            "Plan": 0.00,
+            "Actual": 863.99,
+            "Commitment": 0.00,
+            "VarianceAbs": 863.99,
+            "VariancePct": 0.00
+        },
+        {
+            "Type": "Group",
+            "Description": "6170000 Sonstige Aufwendungen für bezogene Leist",
+            "Plan": 0.00,
+            "Actual": 1787.38,
+            "Commitment": 0.00,
+            "VarianceAbs": 1787.38,
+            "VariancePct": 0.00
+        },
+        {
+            "Type": "Item",
+            "Description": "* Aufwendungen fuer bezogene Leistungen",
+            "Plan": 0.00,
+            "Actual": 1787.38,
+            "Commitment": 0.00,
+            "VarianceAbs": 1787.38,
+            "VariancePct": 0.00
+        },
+        {
+            "Type": "Total",
+            "Description": "** Aufwendungen Sachmittel und Anlageverm.",
+            "Plan": 0.00,
+            "Actual": 2651.37,
+            "Commitment": 0.00,
+            "VarianceAbs": 2651.37,
+            "VariancePct": 0.00
+        },
+        {
+            "Type": "Total",
+            "Description": "*** Aufwendungen Gesamt Kostenstellen",
+            "Plan": 0.00,
+            "Actual": 2651.37,
+            "Commitment": 0.00,
+            "VarianceAbs": 2651.37,
+            "VariancePct": 0.00
+        },
+        {
+            "Type": "Total",
+            "Description": "**** 406122 Experimentalphysik",
+            "Plan": 0.00,
+            "Actual": 2651.37,
+            "Commitment": 0.00,
+            "VarianceAbs": 2651.37,
+            "VariancePct": 0.00
+        },
+        {
+            "Type": "GrandTotal",
+            "Description": "***** Summe Kostenstellen",
+            "Plan": 0.00,
+            "Actual": 2651.37,
+            "Commitment": 0.00,
+            "VarianceAbs": 2651.37,
+            "VariancePct": 0.00
+        }
+    ]
+}

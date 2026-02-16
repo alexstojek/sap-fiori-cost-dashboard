@@ -1,0 +1,145 @@
+<mvc:View
+    controllerName="my.fiori.app.controller.CostReport"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    xmlns:micro="sap.suite.ui.microchart"
+    xmlns:core="sap.ui.core">
+    
+    <f:DynamicPage id="dynamicPage" headerExpanded="true" toggleHeaderOnTitleClick="true" backgroundDesign="Transparent">
+        <!-- DynamicPage Title -->
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Kostenstellen-Cockpit"/>
+                </f:heading>
+                <f:expandedContent>
+                    <Label text="Operative Finanzübersicht Q1 2026"/>
+                </f:expandedContent>
+            </f:DynamicPageTitle>
+        </f:title>
+
+        <!-- DynamicPage Header -->
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <HBox wrap="Wrap" alignItems="Start">
+                        <!-- Filters -->
+                         <VBox class="sapUiMediumMarginEnd">
+                            <Label text="Zeitraum" labelFor="dateRange"/>
+                            <DateRangeSelection id="dateRange" width="15rem" placeholder="Jan 2026 - Mar 2026" change="onDateChange"/>
+                        </VBox>
+                         <VBox class="sapUiMediumMarginEnd">
+                            <Label text="Status" labelFor="statusFilter"/>
+                            <Select id="statusFilter" width="10rem" change="onFilterSearch">
+                                <core:Item key="All" text="Alle"/>
+                                <core:Item key="Critical" text="Kritisch"/>
+                                <core:Item key="Warning" text="Warnung"/>
+                                <core:Item key="Success" text="OK"/>
+                            </Select>
+                        </VBox>
+                         <VBox class="sapUiMediumMarginEnd">
+                            <Label text="Kostenstelle" labelFor="costCenterFilter"/>
+                            <MultiComboBox
+                                id="costCenterFilter"
+                                width="20rem"
+                                placeholder="Kostenstellen wählen"
+                                items="{kpi>/CostCenters}"
+                                selectionFinish="onCostCenterChange">
+                                <core:Item key="{kpi>ID}" text="{kpi>Name} ({kpi>ID})"/>
+                            </MultiComboBox>
+                        </VBox>
+                        <VBox class="sapUiMediumMarginEnd">
+                            <Label text="PSP-Element" labelFor="pspFilter"/>
+                            <ComboBox
+                                id="pspFilter"
+                                width="20rem" 
+                                placeholder="Alle PSP-Elemente"
+                                items="{kpi>/PSPElements}"
+                                change="onPSPChange">
+                                <core:Item key="{kpi>ID}" text="{kpi>ID}"/>
+                            </ComboBox>
+                        </VBox>
+                        <!-- Actions -->
+                        <!-- Actions -->
+                        <HBox alignItems="End" class="sapUiTinyMarginEnd">
+                           <Button text="Zurücksetzen" type="Transparent" press="onFilterClear"/>
+                        </HBox>
+                    </HBox>
+            </f:DynamicPageHeader>
+        </f:header>
+
+        <!-- Dashboard Content -->
+        <f:content>
+            <Table
+                id="costCenterTable"
+                items="{kpi>/TableItems}"
+                growing="true"
+                growingThreshold="20"
+                mode="SingleSelectMaster"
+                itemPress="onCostCenterPress">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <Title text="Kostenstellen Übersicht" level="H2"/>
+                        <ToolbarSpacer/>
+                        <SearchField id="searchField" placeholder="Suche..." width="20%" search="onSearch"/>
+                         <Button icon="sap-icon://excel-attachment" type="Transparent"/>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                     <Column width="15rem">
+                        <Text text="Kostenstelle"/>
+                    </Column>
+                     <Column width="12rem">
+                        <Text text="PSP-Element"/>
+                    </Column>
+                    <Column minScreenWidth="Tablet" demandPopin="true" width="10rem">
+                        <Text text="Verantwortlich"/>
+                    </Column>
+                    <Column hAlign="End" width="8rem">
+                        <Text text="Plan (Budget)"/>
+                    </Column>
+                    <Column hAlign="End" width="8rem">
+                        <Text text="Ist-Kosten"/>
+                    </Column>
+                     <Column hAlign="End" width="8rem">
+                        <Text text="Abweichung"/>
+                    </Column>
+                     <Column width="8rem" hAlign="Center">
+                        <Text text="Status"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation" press="onCostCenterPress">
+                        <cells>
+                            <ObjectIdentifier title="{kpi>Name}" text="{kpi>ID}"/>
+                            <Text text="{kpi>PSPElement}"/>
+                            <Text text="{kpi>Manager}"/>
+                            <ObjectNumber
+                                number="{kpi>Budget}"
+                                unit="{kpi>Currency}"/>
+                            <ObjectNumber
+                                number="{kpi>Actuals}"
+                                unit="{kpi>Currency}"
+                                state="{= ${kpi>Actuals} > ${kpi>Budget} ? 'Error' : 'None'}"/>
+                             <ObjectNumber
+                                number="{
+                                    parts: [
+                                        {path: 'kpi>Budget'},
+                                        {path: 'kpi>Actuals'}
+                                    ],
+                                    formatter: '.varianceAmount'
+                                }"
+                                unit="{kpi>Currency}"
+                                state="{= ${kpi>Actuals} > ${kpi>Budget} ? 'Error' : 'Success'}"/>
+                            <ObjectStatus 
+                                text="{= ${kpi>Actuals} > ${kpi>Budget} ? 'Kritisch' : 'OK'}" 
+                                state="{= ${kpi>Actuals} > ${kpi>Budget} ? 'Error' : 'Success'}"
+                                icon="{= ${kpi>Actuals} > ${kpi>Budget} ? 'sap-icon://alert' : 'sap-icon://sys-enter-2'}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>

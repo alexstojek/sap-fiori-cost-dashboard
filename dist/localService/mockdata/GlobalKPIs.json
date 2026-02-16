@@ -1,0 +1,486 @@
+{
+  "Header": {
+    "TotalBudget": "1.2M",
+    "TotalActuals": "889k",
+    "TotalVariance": "-26%",
+    "OpenItems": 15
+  },
+  "Filter": {
+    "StartDate": null,
+    "EndDate": null
+  },
+  "CostCenters": [
+    {
+      "ID": "406122",
+      "Name": "Experimentalphysik"
+    },
+    {
+      "ID": "500200",
+      "Name": "Marketing Core"
+    },
+    {
+      "ID": "600300",
+      "Name": "HR Operations"
+    },
+    {
+      "ID": "700400",
+      "Name": "Logistik Hub"
+    },
+    {
+      "ID": "800500",
+      "Name": "R&D Future Lab"
+    }
+  ],
+  "TableItems": [
+    {
+      "ID": "406122",
+      "Name": "Experimentalphysik",
+      "Manager": "A. Müller",
+      "Budget": 450000,
+      "Actuals": 420000,
+      "Currency": "EUR",
+      "Status": "Success",
+      "Trend": [
+        {
+          "Value": 120
+        },
+        {
+          "Value": 130
+        },
+        {
+          "Value": 140
+        }
+      ],
+      "OpenItemsCount": 2,
+      "PSPElement": "90000000406122",
+      "MonthlyData": [
+        {
+          "Year": 2026,
+          "Month": 0,
+          "Budget": 143766,
+          "Actuals": 183958
+        },
+        {
+          "Year": 2026,
+          "Month": 1,
+          "Budget": 177053,
+          "Actuals": 156972
+        },
+        {
+          "Year": 2026,
+          "Month": 2,
+          "Budget": 143083,
+          "Actuals": 115449
+        },
+        {
+          "Year": 2026,
+          "Month": 3,
+          "Budget": 178381,
+          "Actuals": 130282
+        },
+        {
+          "Year": 2026,
+          "Month": 4,
+          "Budget": 133175,
+          "Actuals": 188386
+        },
+        {
+          "Year": 2026,
+          "Month": 5,
+          "Budget": 174451,
+          "Actuals": 109875
+        }
+      ]
+    },
+    {
+      "ID": "406122",
+      "Name": "Experimentalphysik",
+      "Manager": "A. Müller",
+      "Budget": 120000,
+      "Actuals": 15000,
+      "Currency": "EUR",
+      "Status": "Success",
+      "Trend": [
+        {
+          "Value": 10
+        },
+        {
+          "Value": 45
+        },
+        {
+          "Value": 80
+        }
+      ],
+      "OpenItemsCount": 1,
+      "PSPElement": "90000001406122",
+      "MonthlyData": [
+        {
+          "Year": 2026,
+          "Month": 0,
+          "Budget": 38535,
+          "Actuals": 2927
+        },
+        {
+          "Year": 2026,
+          "Month": 1,
+          "Budget": 36487,
+          "Actuals": 3366
+        },
+        {
+          "Year": 2026,
+          "Month": 2,
+          "Budget": 43313,
+          "Actuals": 3317
+        },
+        {
+          "Year": 2026,
+          "Month": 3,
+          "Budget": 39210,
+          "Actuals": 3975
+        },
+        {
+          "Year": 2026,
+          "Month": 4,
+          "Budget": 37262,
+          "Actuals": 3741
+        },
+        {
+          "Year": 2026,
+          "Month": 5,
+          "Budget": 37302,
+          "Actuals": 5636
+        }
+      ]
+    },
+    {
+      "ID": "500200",
+      "Name": "Marketing Core",
+      "Manager": "S. Klein",
+      "Budget": 300000,
+      "Actuals": 350000,
+      "Currency": "EUR",
+      "Status": "Error",
+      "Trend": [
+        {
+          "Value": 90
+        },
+        {
+          "Value": 110
+        },
+        {
+          "Value": 150
+        }
+      ],
+      "OpenItemsCount": 8,
+      "PSPElement": "90000000500200",
+      "MonthlyData": [
+        {
+          "Year": 2026,
+          "Month": 0,
+          "Budget": 117056,
+          "Actuals": 69890
+        },
+        {
+          "Year": 2026,
+          "Month": 1,
+          "Budget": 115020,
+          "Actuals": 141810
+        },
+        {
+          "Year": 2026,
+          "Month": 2,
+          "Budget": 84986,
+          "Actuals": 151562
+        },
+        {
+          "Year": 2026,
+          "Month": 3,
+          "Budget": 97407,
+          "Actuals": 87261
+        },
+        {
+          "Year": 2026,
+          "Month": 4,
+          "Budget": 89609,
+          "Actuals": 150360
+        },
+        {
+          "Year": 2026,
+          "Month": 5,
+          "Budget": 97123,
+          "Actuals": 93320
+        }
+      ]
+    },
+    {
+      "ID": "500200",
+      "Name": "Marketing Core",
+      "Manager": "S. Klein",
+      "Budget": 80000,
+      "Actuals": 75000,
+      "Currency": "EUR",
+      "Status": "Warning",
+      "Trend": [
+        {
+          "Value": 20
+        },
+        {
+          "Value": 25
+        },
+        {
+          "Value": 55
+        }
+      ],
+      "OpenItemsCount": 2,
+      "PSPElement": "90000001500200",
+      "MonthlyData": [
+        {
+          "Year": 2026,
+          "Month": 0,
+          "Budget": 21868,
+          "Actuals": 17572
+        },
+        {
+          "Year": 2026,
+          "Month": 1,
+          "Budget": 24959,
+          "Actuals": 22752
+        },
+        {
+          "Year": 2026,
+          "Month": 2,
+          "Budget": 22619,
+          "Actuals": 19342
+        },
+        {
+          "Year": 2026,
+          "Month": 3,
+          "Budget": 30641,
+          "Actuals": 21289
+        },
+        {
+          "Year": 2026,
+          "Month": 4,
+          "Budget": 24774,
+          "Actuals": 19689
+        },
+        {
+          "Year": 2026,
+          "Month": 5,
+          "Budget": 28215,
+          "Actuals": 33694
+        }
+      ]
+    },
+    {
+      "ID": "600300",
+      "Name": "HR Operations",
+      "Manager": "K. Weber",
+      "Budget": 150000,
+      "Actuals": 145000,
+      "Currency": "EUR",
+      "Status": "Success",
+      "Trend": [
+        {
+          "Value": 45
+        },
+        {
+          "Value": 48
+        },
+        {
+          "Value": 52
+        }
+      ],
+      "OpenItemsCount": 0,
+      "PSPElement": "90000000600300",
+      "MonthlyData": [
+        {
+          "Year": 2026,
+          "Month": 0,
+          "Budget": 45443,
+          "Actuals": 29517
+        },
+        {
+          "Year": 2026,
+          "Month": 1,
+          "Budget": 44825,
+          "Actuals": 31185
+        },
+        {
+          "Year": 2026,
+          "Month": 2,
+          "Budget": 56853,
+          "Actuals": 63153
+        },
+        {
+          "Year": 2026,
+          "Month": 3,
+          "Budget": 40734,
+          "Actuals": 45650
+        },
+        {
+          "Year": 2026,
+          "Month": 4,
+          "Budget": 44096,
+          "Actuals": 55789
+        },
+        {
+          "Year": 2026,
+          "Month": 5,
+          "Budget": 47279,
+          "Actuals": 63242
+        }
+      ]
+    },
+    {
+      "ID": "700400",
+      "Name": "Logistik Hub",
+      "Manager": "M. Bauer",
+      "Budget": 200000,
+      "Actuals": 195000,
+      "Currency": "EUR",
+      "Status": "Warning",
+      "Trend": [
+        {
+          "Value": 60
+        },
+        {
+          "Value": 65
+        },
+        {
+          "Value": 70
+        }
+      ],
+      "OpenItemsCount": 3,
+      "PSPElement": "90000000700400",
+      "MonthlyData": [
+        {
+          "Year": 2026,
+          "Month": 0,
+          "Budget": 65226,
+          "Actuals": 65036
+        },
+        {
+          "Year": 2026,
+          "Month": 1,
+          "Budget": 76989,
+          "Actuals": 81922
+        },
+        {
+          "Year": 2026,
+          "Month": 2,
+          "Budget": 63854,
+          "Actuals": 89411
+        },
+        {
+          "Year": 2026,
+          "Month": 3,
+          "Budget": 69628,
+          "Actuals": 73517
+        },
+        {
+          "Year": 2026,
+          "Month": 4,
+          "Budget": 77327,
+          "Actuals": 83973
+        },
+        {
+          "Year": 2026,
+          "Month": 5,
+          "Budget": 65462,
+          "Actuals": 42339
+        }
+      ]
+    },
+    {
+      "ID": "800500",
+      "Name": "R&D Future Lab",
+      "Manager": "Dr. T. Schmidt",
+      "Budget": 500000,
+      "Actuals": 480000,
+      "Currency": "EUR",
+      "Status": "Success",
+      "Trend": [
+        {
+          "Value": 150
+        },
+        {
+          "Value": 160
+        },
+        {
+          "Value": 170
+        }
+      ],
+      "OpenItemsCount": 1,
+      "PSPElement": "90000000800500",
+      "MonthlyData": [
+        {
+          "Year": 2026,
+          "Month": 0,
+          "Budget": 189808,
+          "Actuals": 203521
+        },
+        {
+          "Year": 2026,
+          "Month": 1,
+          "Budget": 176273,
+          "Actuals": 185646
+        },
+        {
+          "Year": 2026,
+          "Month": 2,
+          "Budget": 145964,
+          "Actuals": 104445
+        },
+        {
+          "Year": 2026,
+          "Month": 3,
+          "Budget": 192420,
+          "Actuals": 173287
+        },
+        {
+          "Year": 2026,
+          "Month": 4,
+          "Budget": 152999,
+          "Actuals": 192245
+        },
+        {
+          "Year": 2026,
+          "Month": 5,
+          "Budget": 150852,
+          "Actuals": 226398
+        }
+      ]
+    }
+  ],
+  "PSPElements": [
+    {
+      "ID": "90000000406122",
+      "Text": "90000000406122"
+    },
+    {
+      "ID": "90000001406122",
+      "Text": "90000001406122"
+    },
+    {
+      "ID": "90000000500200",
+      "Text": "90000000500200"
+    },
+    {
+      "ID": "90000001500200",
+      "Text": "90000001500200"
+    },
+    {
+      "ID": "90000000600300",
+      "Text": "90000000600300"
+    },
+    {
+      "ID": "90000000700400",
+      "Text": "90000000700400"
+    },
+    {
+      "ID": "90000000800500",
+      "Text": "90000000800500"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+[
+    {
+        "ProductID": "HT-1000",
+        "Name": "Notebook Basic 15",
+        "Description": "Notebook Basic 15 with 2,80 GHz quad core, 15\" LCD, 4 GB DDR3 RAM, 500 GB Hard Disc, Windows 8 Pro",
+        "Price": "956.00",
+        "PictureUrl": "https://placehold.co/75x75?text=NB15"
+    },
+    {
+        "ProductID": "HT-1001",
+        "Name": "Notebook Basic 17",
+        "Description": "Notebook Basic 17 with 2,80 GHz quad core, 17\" LCD, 6 GB DDR3 RAM, 1000 GB Hard Disc, Windows 8 Pro",
+        "Price": "1249.00",
+        "PictureUrl": "https://placehold.co/75x75?text=NB17"
+    },
+    {
+        "ProductID": "HT-1002",
+        "Name": "Notebook Basic 18",
+        "Description": "Notebook Basic 18 with 2,80 GHz quad core, 18\" LCD, 8 GB DDR3 RAM, 1000 GB Hard Disc, Windows 8 Pro",
+        "Price": "1570.00",
+        "PictureUrl": "https://placehold.co/75x75?text=NB18"
+    },
+    {
+        "ProductID": "HT-1003",
+        "Name": "Notebook Basic 19",
+        "Description": "Notebook Basic 19 with 2,80 GHz quad core, 19\" LCD, 8 GB DDR3 RAM, 1000 GB Hard Disc, Windows 8 Pro",
+        "Price": "1650.00",
+        "PictureUrl": "https://placehold.co/75x75?text=NB19"
+    }
+]

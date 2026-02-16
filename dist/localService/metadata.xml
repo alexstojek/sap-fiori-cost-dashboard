@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:DataServices m:DataServiceVersion="2.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+        <Schema Namespace="Z_COST_REPORT_SRV" xml:lang="de" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            
+            <EntityType Name="CostCenter">
+                <Key>
+                    <PropertyRef Name="CostCenterID"/>
+                </Key>
+                <Property Name="CostCenterID" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Kostenstelle" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Bezeichnung" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                <Property Name="Budget" Type="Edm.Decimal" Precision="15" Scale="2" sap:label="Budget" sap:unit="Currency" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                <Property Name="ActualCosts" Type="Edm.Decimal" Precision="15" Scale="2" sap:label="Ist-Kosten" sap:unit="Currency" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Währung" sap:semantics="currency-code" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                <NavigationProperty Name="ToItems" Relationship="Z_COST_REPORT_SRV.CostCenterToItems" FromRole="FromRole_CostCenter" ToRole="ToRole_CostCenterItem"/>
+            </EntityType>
+
+            <EntityType Name="CostCenterItem">
+                <Key>
+                    <PropertyRef Name="ItemID"/>
+                </Key>
+                <Property Name="ItemID" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Buchungs-ID" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                <Property Name="CostCenterID" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Kostenstelle" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="60" sap:label="Buchungstext" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                <Property Name="Category" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Kostenart" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                <Property Name="PostingDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Buchungsdatum" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                <Property Name="Amount" Type="Edm.Decimal" Precision="13" Scale="2" sap:label="Betrag" sap:unit="Currency" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Währung" sap:semantics="currency-code" xmlns:sap="http://www.sap.com/Protocols/SAPData"/>
+            </EntityType>
+
+            <Association Name="CostCenterToItems">
+                <End Type="Z_COST_REPORT_SRV.CostCenter" Multiplicity="1" Role="FromRole_CostCenter"/>
+                <End Type="Z_COST_REPORT_SRV.CostCenterItem" Multiplicity="*" Role="ToRole_CostCenterItem"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_CostCenter">
+                        <PropertyRef Name="CostCenterID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_CostCenterItem">
+                        <PropertyRef Name="CostCenterID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+
+            <EntityContainer Name="Z_COST_REPORT_SRV_Entities" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="CostCenters" EntityType="Z_COST_REPORT_SRV.CostCenter"/>
+                <EntitySet Name="CostCenterItems" EntityType="Z_COST_REPORT_SRV.CostCenterItem"/>
+                <AssociationSet Name="CostCenterToItemsSet" Association="Z_COST_REPORT_SRV.CostCenterToItems">
+                    <End EntitySet="CostCenters" Role="FromRole_CostCenter"/>
+                    <End EntitySet="CostCenterItems" Role="ToRole_CostCenterItem"/>
+                </AssociationSet>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

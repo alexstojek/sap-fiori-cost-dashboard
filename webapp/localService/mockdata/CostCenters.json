@@ -1,0 +1,44 @@
+[
+    {
+        "CostCenterID": "KS-1000",
+        "Description": "IT Infrastruktur & Betrieb",
+        "Budget": "150000.00",
+        "ActualCosts": "142000.00",
+        "Currency": "EUR"
+    },
+    {
+        "CostCenterID": "KS-2000",
+        "Description": "Personalwesen & Recruiting",
+        "Budget": "80000.00",
+        "ActualCosts": "85000.00",
+        "Currency": "EUR"
+    },
+    {
+        "CostCenterID": "KS-3000",
+        "Description": "Vertrieb DACH",
+        "Budget": "200000.00",
+        "ActualCosts": "120000.00",
+        "Currency": "EUR"
+    },
+    {
+        "CostCenterID": "KS-4000",
+        "Description": "Marketing Global",
+        "Budget": "300000.00",
+        "ActualCosts": "450000.00",
+        "Currency": "EUR"
+    },
+    {
+        "CostCenterID": "KS-5000",
+        "Description": "Produktion Linie 1",
+        "Budget": "500000.00",
+        "ActualCosts": "490000.00",
+        "Currency": "EUR"
+    },
+    {
+        "CostCenterID": "KS-9000",
+        "Description": "Vorstand & Verwaltung",
+        "Budget": "50000.00",
+        "ActualCosts": "2000.00",
+        "Currency": "EUR"
+    }
+]

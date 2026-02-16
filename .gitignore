@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Build Results
+# dist/
+
+# UI5 Tooling
+.ui5/
+
+# OS Files
+.DS_Store
+Thumbs.db

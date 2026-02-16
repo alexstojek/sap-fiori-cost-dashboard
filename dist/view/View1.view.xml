@@ -1,0 +1,11 @@
+<mvc:View controllerName="my.fiori.app.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <List items="{/Products}" headerText="Products">
+                <StandardListItem title="{Name}" description="{Description}" icon="{PictureUrl}" />
+            </List>
+        </content>
+    </Page>
+</mvc:View>

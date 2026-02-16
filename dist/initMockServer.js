@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/ComponentContainer","sap/m/MessageBox"],function(e,i){"use strict";sap.ui.require(["my/fiori/app/localService/mockserver"],function(n){console.log("Initializing Mock Server...");n.init().catch(function(e){console.error("Mock Server Init Failed:",e);i.error(e.message)}).finally(function(){console.log("Initializing Component...");new e({name:"my.fiori.app",async:true,settings:{id:"fiori_app"}}).placeAt("content")})})});
+//# sourceMappingURL=initMockServer.js.map

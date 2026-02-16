@@ -1,0 +1,74 @@
+[
+    {
+        "ItemID": "1001",
+        "CostCenterID": "KS-1000",
+        "Description": "Server-Wartung Q1",
+        "Category": "Dienstleistung",
+        "PostingDate": "/Date(1769904000000)/",
+        "Amount": "12000.00",
+        "Currency": "EUR"
+    },
+    {
+        "ItemID": "1002",
+        "CostCenterID": "KS-1000",
+        "Description": "Neue Laptops Entwickler",
+        "Category": "Hardware",
+        "PostingDate": "/Date(1770508800000)/",
+        "Amount": "25000.00",
+        "Currency": "EUR"
+    },
+    {
+        "ItemID": "1003",
+        "CostCenterID": "KS-1000",
+        "Description": "Cloud-Hosting Azure",
+        "Category": "Lizenz",
+        "PostingDate": "/Date(1771113600000)/",
+        "Amount": "5000.00",
+        "Currency": "EUR"
+    },
+    {
+        "ItemID": "2001",
+        "CostCenterID": "KS-2000",
+        "Description": "Headhunter Provision",
+        "Category": "Dienstleistung",
+        "PostingDate": "/Date(1769990400000)/",
+        "Amount": "15000.00",
+        "Currency": "EUR"
+    },
+    {
+        "ItemID": "2002",
+        "CostCenterID": "KS-2000",
+        "Description": "Team-Event Q1",
+        "Category": "Reisekosten",
+        "PostingDate": "/Date(1771718400000)/",
+        "Amount": "2500.00",
+        "Currency": "EUR"
+    },
+    {
+        "ItemID": "4001",
+        "CostCenterID": "KS-4000",
+        "Description": "TV-Kampagne Superbowl",
+        "Category": "Werbung",
+        "PostingDate": "/Date(1769817600000)/",
+        "Amount": "150000.00",
+        "Currency": "EUR"
+    },
+    {
+        "ItemID": "4002",
+        "CostCenterID": "KS-4000",
+        "Description": "Google Ads Kampagne",
+        "Category": "Werbung",
+        "PostingDate": "/Date(1770422400000)/",
+        "Amount": "50000.00",
+        "Currency": "EUR"
+    },
+    {
+        "ItemID": "4003",
+        "CostCenterID": "KS-4000",
+        "Description": "Messeauftritt Berlin",
+        "Category": "Messe",
+        "PostingDate": "/Date(1772323200000)/",
+        "Amount": "25000.00",
+        "Currency": "EUR"
+    }
+]

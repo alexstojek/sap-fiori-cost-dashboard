@@ -1,0 +1,52 @@
+{
+    "LineItems": [
+        {
+            "DocumentNumber": "1000451",
+            "PostingDate": "01.03.2026",
+            "Account": "400000 (Umsatzerlöse)",
+            "Amount": "125000.00",
+            "Currency": "EUR",
+            "Description": "Beratungsleistung - Projekt Alpha"
+        },
+        {
+            "DocumentNumber": "1000452",
+            "PostingDate": "02.03.2026",
+            "Account": "500100 (Materialaufwand)",
+            "Amount": "-2500.00",
+            "Currency": "EUR",
+            "Description": "Rohmaterial Einkauf - Charge 22"
+        },
+        {
+            "DocumentNumber": "1000453",
+            "PostingDate": "05.03.2026",
+            "Account": "600200 (Reisekosten)",
+            "Amount": "-1200.00",
+            "Currency": "EUR",
+            "Description": "Flug zum HQ - Meeting"
+        },
+        {
+            "DocumentNumber": "1000454",
+            "PostingDate": "10.03.2026",
+            "Account": "400000 (Umsatzerlöse)",
+            "Amount": "50000.00",
+            "Currency": "EUR",
+            "Description": "Audit Gebühren - Q1"
+        },
+        {
+            "DocumentNumber": "1000455",
+            "PostingDate": "12.03.2026",
+            "Account": "700500 (Marketing)",
+            "Amount": "-15000.00",
+            "Currency": "EUR",
+            "Description": "Google Ads Kampagne Q1"
+        },
+        {
+            "DocumentNumber": "1000456",
+            "PostingDate": "15.03.2026",
+            "Account": "600300 (Bürobedarf)",
+            "Amount": "-450.00",
+            "Currency": "EUR",
+            "Description": "Papier & Toner"
+        }
+    ]
+}
