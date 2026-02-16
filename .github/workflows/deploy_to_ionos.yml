@@ -22,18 +22,13 @@ jobs:
     - name: 🔨 Build Project
       run: npm run build
       
-    - name: 📂 Sync files to IONOS
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    - name: 📂 Sync files to IONOS via SFTP
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
-        server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
+        server: ${{ secrets.FTP_SERVER }}
         password: ${{ secrets.FTP_PASSWORD }}
-        # Upload ONLY the content of the dist folder
-        local-dir: ./dist/
-        # Target folder on your IONOS webspace
-        server-dir: /sap/Kostenstellenberichte/
-        protocol: ftp
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
+        port: 22
+        local_path: './dist/*'
+        remote_path: '/sap/Kostenstellenberichte/'
+        sftp_args: '-o ConnectTimeout=5'
