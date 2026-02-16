@@ -22,13 +22,13 @@ jobs:
     - name: 🔨 Build Project
       run: npm run build
       
-    - name: 📂 Sync files to IONOS via SFTP
-      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+    - name: 📂 Sync files to IONOS via SCP
+      uses: appleboy/scp-action@master
       with:
+        host: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
-        server: ${{ secrets.FTP_SERVER }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: 22
-        local_path: './dist/*'
-        remote_path: '/sap/Kostenstellenberichte/'
-        sftp_args: '-o ConnectTimeout=5'
+        source: "dist/*"
+        target: "/sap/Kostenstellenberichte/"
+        strip_components: 1
