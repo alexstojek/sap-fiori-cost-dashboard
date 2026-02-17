@@ -1,3 +1,7 @@
+# Set directory index
+DirectoryIndex index.html
+
+# MIME types - serve files with correct content type
 AddType application/javascript .js
 AddType application/json .json
 AddType text/css .css
@@ -13,7 +17,7 @@ AddType image/svg+xml .svg
 </IfModule>
 
 # Disable directory listing
-Options -Indexes
+Options -Indexes +FollowSymLinks
 
 # Set default charset
 AddDefaultCharset UTF-8
@@ -21,4 +25,13 @@ AddDefaultCharset UTF-8
 # Enable compression
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Prevent serving index.html for actual file requests
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Serve actual files and directories directly
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
 </IfModule>
