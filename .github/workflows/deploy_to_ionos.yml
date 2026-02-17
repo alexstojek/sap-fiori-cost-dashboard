@@ -33,6 +33,7 @@ jobs:
         echo "set sftp:auto-confirm yes;" > deploy.lftp
         echo "open sftp://${FTP_SERVER}" >> deploy.lftp
         echo "user \"${FTP_USERNAME}\" \"${FTP_PASSWORD}\"" >> deploy.lftp
+        echo "rm -f /sap/Kostenstellenberichte/.htaccess" >> deploy.lftp
         echo "mkdir -p /sap/Kostenstellenberichte/sap/costdashboard" >> deploy.lftp
         echo "mirror -R -v --parallel=2 ./dist /sap/Kostenstellenberichte/sap/costdashboard" >> deploy.lftp
         echo "bye" >> deploy.lftp
